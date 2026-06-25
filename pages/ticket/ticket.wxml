@@ -12,9 +12,9 @@
 
     <view class="brand-ticket">
       <view class="color-strip">
-        <view style="background-color: {{colors[0]}}"></view>
-        <view style="background-color: {{colors[1]}}"></view>
-        <view style="background-color: {{colors[2]}}"></view>
+        <view style="{{colorStyles[0]}}"></view>
+        <view style="{{colorStyles[1]}}"></view>
+        <view style="{{colorStyles[2]}}"></view>
         <text class="live-time" style="left: {{timeLeft}}%">{{ticketTime}}</text>
       </view>
 

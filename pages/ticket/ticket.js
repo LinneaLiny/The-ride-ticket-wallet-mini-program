@@ -1,4 +1,5 @@
 const {
+  formatClock,
   formatTicketTime,
   getColorSet,
   getDayPassState,
@@ -14,6 +15,7 @@ Page({
     ticketTime: "",
     activatedClock: "",
     colors: [],
+    colorStyles: [],
     timeLeft: 50,
     qrSrc: ""
   },
@@ -40,11 +42,13 @@ Page({
   refresh() {
     const now = new Date()
     const dayPass = getDayPassState(now)
+    const colors = getColorSet(now)
 
     this.setData({
       ticketTime: formatTicketTime(now),
       activatedClock: formatClock(dayPass.activatedAt),
-      colors: getColorSet(now),
+      colors,
+      colorStyles: colors.map((color) => `background-color:${color};`),
       timeLeft: getMovingOffset(now)
     })
   },

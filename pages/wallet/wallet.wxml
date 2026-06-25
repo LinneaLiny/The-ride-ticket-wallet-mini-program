@@ -15,7 +15,7 @@
 
   <view class="ticket-list">
     <block wx:for="{{tickets}}" wx:key="id">
-      <button class="wallet-card" data-type="{{item.type}}" bindtap="openTicket">
+      <view class="wallet-card" data-type="{{item.type}}" bindtap="openTicket">
         <view class="card-head">
           <text class="card-title">{{item.name}}</text>
           <text class="active-text">ACTIVE</text>
@@ -29,7 +29,7 @@
           <text class="brand-text">TheRide</text>
         </view>
         <text class="expires">Expires {{item.expiresLabel}}</text>
-      </button>
+      </view>
     </block>
   </view>
 
