@@ -1,0 +1,61 @@
+<view class="ticket-page">
+  <view class="phone-bar">
+    <text class="plain-time">{{clock}}</text>
+    <view class="status-right">
+      <view class="signal">
+        <view></view><view></view><view></view><view></view>
+      </view>
+      <text>5G</text>
+      <view class="battery">100</view>
+    </view>
+  </view>
+
+  <button class="close" bindtap="closeTicket">Close</button>
+
+  <view class="pass-card">
+    <view class="pass-title">{{title}}</view>
+
+    <view class="qr-wrap">
+      <view class="qr">
+        <block wx:for="{{qrRows}}" wx:key="key">
+          <view class="qr-row">
+            <block wx:for="{{item.cells}}" wx:key="key">
+              <view class="qr-cell {{item.dark ? 'dark' : ''}}"></view>
+            </block>
+          </view>
+        </block>
+        <view class="qr-center">
+          <view><view><view></view></view></view>
+        </view>
+      </view>
+    </view>
+
+    <text wx:if="{{isSingle}}" class="transfer">Request transfer from driver</text>
+
+    <view class="brand-ticket">
+      <view class="color-strip">
+        <view style="background-color: {{colors[0]}}"></view>
+        <view style="background-color: {{colors[1]}}"></view>
+        <view style="background-color: {{colors[2]}}"></view>
+        <text class="live-time" style="left: {{timeLeft}}%">{{ticketTime}}</text>
+      </view>
+
+      <view class="brand-area">
+        <view class="ride-mark">
+          <view class="mark-circle"></view>
+          <view class="mark-slash"></view>
+        </view>
+        <text class="brand-text">TheRide</text>
+      </view>
+
+      <view wx:if="{{isDay}}" class="activated">Activated {{activatedClock}}</view>
+    </view>
+
+    <view class="spacer"></view>
+
+    <view class="card-footer">
+      <button>••• Actions</button>
+      <button>☷ Details</button>
+    </view>
+  </view>
+</view>

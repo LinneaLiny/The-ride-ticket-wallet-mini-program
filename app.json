@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/wallet/wallet",
+    "pages/ticket/ticket"
+  ],
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f7f7f7",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

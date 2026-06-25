@@ -1,0 +1,50 @@
+<view class="wallet-page">
+  <view class="phone-bar">
+    <view class="status-time">{{clock}}</view>
+    <view class="status-right">
+      <view class="signal">
+        <view></view><view></view><view></view><view></view>
+      </view>
+      <text>LTE</text>
+      <view class="battery">86</view>
+    </view>
+  </view>
+
+  <view class="nav">
+    <button class="back" bindtap="goBack">
+      <text class="chevron">‹</text>
+      <text>Back</text>
+    </button>
+    <text class="title">Ticket Wallet</text>
+    <button class="refresh" bindtap="refresh">↻</button>
+  </view>
+
+  <view class="tabs">
+    <button class="tab active">Tickets</button>
+    <button class="tab muted">History</button>
+  </view>
+
+  <view class="ticket-list">
+    <block wx:for="{{tickets}}" wx:key="id">
+      <button class="wallet-card" data-type="{{item.type}}" bindtap="openTicket">
+        <view class="card-head">
+          <text class="card-title">{{item.name}}</text>
+          <text class="active-text">ACTIVE</text>
+        </view>
+        <view class="brand-panel">
+          <view class="ride-mark">
+            <view class="mark-circle"></view>
+            <view class="mark-slash"></view>
+          </view>
+          <text class="brand-text">TheRide</text>
+        </view>
+        <text class="expires">Expires {{item.expiresLabel}}</text>
+      </button>
+    </block>
+  </view>
+
+  <view class="wallet-actions">
+    <button class="buy-button">Buy tickets</button>
+    <button class="account-button">View my account</button>
+  </view>
+</view>
