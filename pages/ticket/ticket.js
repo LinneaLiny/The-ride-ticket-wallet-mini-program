@@ -3,8 +3,7 @@ const {
   formatTicketTime,
   getColorSet,
   getDayPassState,
-  getMovingOffset,
-  makeQrRows
+  getMovingOffset
 } = require("../../utils/ticket")
 
 Page({
@@ -18,7 +17,7 @@ Page({
     activatedClock: "",
     colors: [],
     timeLeft: 50,
-    qrRows: []
+    qrSrc: ""
   },
 
   onLoad(options) {
@@ -29,7 +28,7 @@ Page({
       isDay: type === "day",
       isSingle: type === "single",
       title: type === "day" ? "Fixed Route (Regular) Day Pass" : "Fixed Route (Regular) Single Ride",
-      qrRows: makeQrRows(type === "day" ? 11 : 23)
+      qrSrc: type === "day" ? "/assets/qr-day.jpg" : "/assets/qr-single.png"
     })
 
     this.refresh()

@@ -16,18 +16,7 @@
     <view class="pass-title">{{title}}</view>
 
     <view class="qr-wrap">
-      <view class="qr">
-        <block wx:for="{{qrRows}}" wx:key="key">
-          <view class="qr-row">
-            <block wx:for="{{item.cells}}" wx:key="key">
-              <view class="qr-cell {{item.dark ? 'dark' : ''}}"></view>
-            </block>
-          </view>
-        </block>
-        <view class="qr-center">
-          <view><view><view></view></view></view>
-        </view>
-      </view>
+      <image class="qr-image" src="{{qrSrc}}" mode="aspectFit"></image>
     </view>
 
     <text wx:if="{{isSingle}}" class="transfer">Request transfer from driver</text>

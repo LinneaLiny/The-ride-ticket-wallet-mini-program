@@ -74,32 +74,7 @@ function getMovingOffset(date = new Date()) {
   const secondsInCycle = 24
   const phase = (date.getSeconds() % secondsInCycle) / secondsInCycle
   const triangle = phase <= 0.5 ? phase * 2 : (1 - phase) * 2
-  return 32 + Math.round(triangle * 36)
-}
-
-function makeQrRows(seed) {
-  const size = 41
-  const rows = []
-
-  for (let y = 0; y < size; y += 1) {
-    const cells = []
-    for (let x = 0; x < size; x += 1) {
-      const inCenter = x >= 16 && x <= 24 && y >= 16 && y <= 24
-      const ring = inCenter && (
-        x === 16 || x === 24 || y === 16 || y === 24 ||
-        x === 18 || x === 22 || y === 18 || y === 22
-      )
-      const dot = inCenter && x >= 20 && x <= 20 && y >= 20 && y <= 20
-      const diagonal = (x + y + seed) % 5 === 0
-      const block = ((x * 29 + y * 37 + seed * 17 + x * y) % 11) < 5
-      const texture = ((x * 7 + y * 13 + seed) % 17) < 8
-      const value = ring || dot || block || (diagonal && texture)
-      cells.push({ key: `${x}-${y}`, dark: value && !(!inCenter && (x + y + seed) % 23 === 0) })
-    }
-    rows.push({ key: `row-${y}`, cells })
-  }
-
-  return rows
+  return 38 + Math.round(triangle * 24)
 }
 
 module.exports = {
@@ -109,6 +84,5 @@ module.exports = {
   getColorSet,
   getDayPassState,
   getMovingOffset,
-  getSinglePassState,
-  makeQrRows
+  getSinglePassState
 }
