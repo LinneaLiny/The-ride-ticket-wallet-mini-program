@@ -33,8 +33,9 @@
         </view>
         <view class="brand-panel">
           <view class="ride-mark">
-            <view class="mark-circle"></view>
-            <view class="mark-slash"></view>
+            <view class="mark-ring"></view>
+            <view class="mark-wing"></view>
+            <view class="mark-cut"></view>
           </view>
           <text class="brand-text">TheRide</text>
         </view>
