@@ -5,62 +5,9 @@
   box-sizing: border-box;
 }
 
-.phone-bar {
-  height: 104rpx;
-  padding: 26rpx 64rpx 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.status-time {
-  min-width: 136rpx;
-  padding: 8rpx 20rpx;
-  border-radius: 28rpx;
-  background: #2dbb55;
-  color: #fff;
-  font-size: 34rpx;
-  line-height: 1;
-}
-
-.status-right {
-  display: flex;
-  align-items: center;
-  gap: 10rpx;
-  color: #111;
-  font-size: 28rpx;
-  font-weight: 600;
-}
-
-.signal {
-  display: flex;
-  align-items: flex-end;
-  gap: 4rpx;
-  height: 30rpx;
-}
-
-.signal view {
-  width: 8rpx;
-  background: #111;
-  border-radius: 4rpx;
-}
-
-.signal view:nth-child(1) { height: 10rpx; }
-.signal view:nth-child(2) { height: 16rpx; }
-.signal view:nth-child(3) { height: 22rpx; }
-.signal view:nth-child(4) { height: 28rpx; }
-
-.battery {
-  padding: 2rpx 10rpx;
-  border-radius: 10rpx;
-  background: #111;
-  color: #fff;
-  font-size: 24rpx;
-}
-
 .nav {
-  height: 104rpx;
+  margin-top: 74rpx;
+  height: 128rpx;
   padding: 0 38rpx;
   display: grid;
   grid-template-columns: 180rpx 1fr 92rpx;
@@ -119,13 +66,13 @@
 }
 
 .ticket-list {
-  padding: 0 38rpx;
+  padding: 0 36rpx;
   box-sizing: border-box;
 }
 
 .wallet-card {
   display: block;
-  width: calc(100vw - 76rpx);
+  width: 100%;
   margin: 0 auto 40rpx;
   padding: 48rpx 50rpx 42rpx;
   box-sizing: border-box;

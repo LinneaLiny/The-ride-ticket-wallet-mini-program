@@ -1,15 +1,4 @@
 <view class="wallet-page">
-  <view class="phone-bar">
-    <view class="status-time">{{clock}}</view>
-    <view class="status-right">
-      <view class="signal">
-        <view></view><view></view><view></view><view></view>
-      </view>
-      <text>LTE</text>
-      <view class="battery">86</view>
-    </view>
-  </view>
-
   <view class="nav">
     <button class="back" bindtap="goBack">
       <text class="chevron">‹</text>

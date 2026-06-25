@@ -56,15 +56,6 @@ function getDayPassState(now = new Date()) {
   }
 }
 
-function getSinglePassState(now = new Date()) {
-  const activatedAt = new Date(now.getTime() - 7 * 60 * 1000)
-  const expiresAt = new Date(activatedAt.getTime() + 2 * 60 * 60 * 1000)
-  return {
-    activatedAt,
-    expiresAt
-  }
-}
-
 function getColorSet(date = new Date()) {
   const index = Math.floor(date.getHours() / 6) % COLOR_SETS.length
   return COLOR_SETS[index]
@@ -83,6 +74,5 @@ module.exports = {
   formatWalletExpiry,
   getColorSet,
   getDayPassState,
-  getMovingOffset,
-  getSinglePassState
+  getMovingOffset
 }

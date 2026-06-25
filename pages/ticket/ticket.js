@@ -1,5 +1,4 @@
 const {
-  formatClock,
   formatTicketTime,
   getColorSet,
   getDayPassState,
@@ -12,7 +11,6 @@ Page({
     isDay: true,
     isSingle: false,
     title: "Fixed Route (Regular) Day Pass",
-    clock: "",
     ticketTime: "",
     activatedClock: "",
     colors: [],
@@ -44,7 +42,6 @@ Page({
     const dayPass = getDayPassState(now)
 
     this.setData({
-      clock: formatClock(now),
       ticketTime: formatTicketTime(now),
       activatedClock: formatClock(dayPass.activatedAt),
       colors: getColorSet(now),

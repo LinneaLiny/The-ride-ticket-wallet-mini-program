@@ -1,17 +1,15 @@
 const {
-  formatClock,
   formatWalletExpiry,
-  getDayPassState,
-  getSinglePassState
+  getDayPassState
 } = require("../../utils/ticket")
 
 Page({
   data: {
-    clock: "",
     tickets: []
   },
 
   onLoad() {
+    this.singlePassExpiresAt = new Date(Date.now() + 5 * 60 * 1000)
     this.refresh()
     this.timer = setInterval(() => this.refresh(), 1000)
   },
@@ -23,10 +21,8 @@ Page({
   refresh() {
     const now = new Date()
     const dayPass = getDayPassState(now)
-    const singlePass = getSinglePassState(now)
 
     this.setData({
-      clock: formatClock(now),
       tickets: [
         {
           id: "day",
@@ -38,7 +34,7 @@ Page({
           id: "single",
           type: "single",
           name: "Single Ride",
-          expiresLabel: formatWalletExpiry(singlePass.expiresAt)
+          expiresLabel: formatWalletExpiry(this.singlePassExpiresAt)
         }
       ]
     })
